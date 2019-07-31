@@ -2,10 +2,6 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/pavan-bommideni/Spring-boot-graphql']
 - name: 'gcr.io/cloud-builders/mvn'
-  args: ['clean']
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['install']
-- name: 'gcr.io/cloud-builders/mvn'
   args: ['build']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/spring:latest', '.']
